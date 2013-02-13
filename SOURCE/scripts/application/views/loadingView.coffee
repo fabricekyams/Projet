@@ -1,17 +1,11 @@
-class loadingView
+define ["jquery"], ($) ->
+  class loadingView
+    constructor: (@el) ->
+      @el = el   
 
-  constructor: (el) ->
-    # ...
-    if typeof el is 'object'
-      # ...
-      @el = el
-    else 
-      throw "#{el} n'est pas un objet jQuery"
-        
+    show:->
+     $("#{@el}").show
 
-  show:->
-    @el.show
-
-  hide:->
-    @el.hide
+    hide:->
+      $("#{@el}").hide()
 

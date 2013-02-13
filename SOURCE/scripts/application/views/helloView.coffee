@@ -1,18 +1,12 @@
-class HelloView
+define ["jquery"], ($) ->
+  class helloView
 
-  constructor: (el) ->
-    # ...
-    if typeof el is 'object'
-      # ...
-      @el = el
-    else 
-      throw "#{el} n'est pas un objet jQuery"
-    
+    constructor: (@el) ->
+      @el = el    
 
-  show:->
+    show:->
+     $("#{@el}").show()
 
-    @el.show
-
-  hide:->
-    @el.hide
+    hide:->
+      $("#{@el}").hide()
 

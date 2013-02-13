@@ -1,15 +1,24 @@
-class loadingCtrl
+define ["jquery"], ($) ->
+  class loadingCtrl
 
-  constructor: (view) ->
-    # ...
-    @view = view
+    constructor: (@view) ->
+      # ...
+      @view = view
 
-  activate:->
-    @view.show
+    activate:->
+      @view.show()
 
-  deactivate:->
-    @view.hide
+    deactivate:->
+      console.log "Loading should hide"
+      @view.hide()
 
-  init:->
-    # dans 5 seconde j'envoi une evenement
-  
+    init:()->
+      setTimeout(
+        ()=>
+          @deactivate()
+        , 5000
+      )
+      
+
+      # dans 5 seconde j'envoi une evenement
+    

@@ -1,10 +1,20 @@
 define [
   "jquery",
-  "scripts/application/controllers/loading",
-  "scripts/application/views/loadingView",
-  "scripts/application/controllers/hello",
-  "scripts/application/views/helloView"], ($,loading,loadingView,hello,helloView) ->
+  "application/controllers/loading",
+  "application/views/loadingView",
+  "application/controllers/hello",
+  "application/views/helloView"], ($,loadingCtrl,loadingView,helloCtrl,helloView) ->
 
   class Application
-    init:->
-      console.log "hello world I have finished loading"
+    init: () ->
+      @loadingCtrl = new loadingCtrl (new loadingView("#loading"))
+      @helloCtrl = new helloCtrl(new helloView("#hello"))
+      @loadingCtrl.init()
+
+      $("#loading").bind '', ()->
+          console.log("I hide")
+      
+
+
+
+      #setTimeout console.log "I wait" , 5000

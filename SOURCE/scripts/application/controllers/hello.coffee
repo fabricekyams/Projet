@@ -1,15 +1,16 @@
-class helloCtrl
+define ["jquery"], ($) ->
+  class helloCtrl
 
-  constructor: (view) ->
-    # ...
-    @view = view
+    constructor: (@view) ->
+      # ...
+      @view = view
 
-  activate:->
-    @view.show
+    activate:->
+      @view.show
 
-  deactivate:->
-    @view.hide
+    deactivate:->
+     @view.hide
 
-  init:->
+    init:->
     # dans 5 seconde j'envoi une evenement
   
