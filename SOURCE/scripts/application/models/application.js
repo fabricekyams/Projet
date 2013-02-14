@@ -7,11 +7,13 @@ define(["jquery", "application/controllers/loading", "application/views/loadingV
     function Application() {}
 
     Application.prototype.init = function() {
-      this.loadingCtrl = new loadingCtrl(new loadingView("#loading"));
+      var _this = this;
       this.helloCtrl = new helloCtrl(new helloView("#hello"));
+      this.loadingCtrl = new loadingCtrl(new loadingView("#loading"));
+      this.helloCtrl.deactivate();
       this.loadingCtrl.init();
-      return $("#loading").bind('click', function() {
-        return console.log("I hide");
+      return $("#loading").bind('load', function(e) {
+        return _this.helloCtrl.activate();
       });
     };
 

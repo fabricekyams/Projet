@@ -10,7 +10,7 @@ define(["jquery"], function($) {
     }
 
     loadingView.prototype.show = function() {
-      return $("" + this.el).show;
+      return $("" + this.el).show();
     };
 
     loadingView.prototype.hide = function() {

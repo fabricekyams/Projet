@@ -7,16 +7,17 @@ define ["jquery"], ($) ->
 
     activate:->
       @view.show()
+      
 
     deactivate:->
-      console.log "Loading should hide"
       @view.hide()
+      $('#loading').trigger('load', ['loaded'])
 
     init:()->
       setTimeout(
         ()=>
           @deactivate()
-        , 5000
+        , 2000
       )
       
 

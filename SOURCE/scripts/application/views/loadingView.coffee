@@ -4,7 +4,7 @@ define ["jquery"], ($) ->
       @el = el   
 
     show:->
-     $("#{@el}").show
+     $("#{@el}").show()
 
     hide:->
       $("#{@el}").hide()

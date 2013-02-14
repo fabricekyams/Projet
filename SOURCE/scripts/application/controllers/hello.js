@@ -10,11 +10,11 @@ define(["jquery"], function($) {
     }
 
     helloCtrl.prototype.activate = function() {
-      return this.view.show;
+      return this.view.show();
     };
 
     helloCtrl.prototype.deactivate = function() {
-      return this.view.hide;
+      return this.view.hide();
     };
 
     helloCtrl.prototype.init = function() {};

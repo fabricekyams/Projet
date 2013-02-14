@@ -14,15 +14,15 @@ define(["jquery"], function($) {
     };
 
     loadingCtrl.prototype.deactivate = function() {
-      console.log("Loading should hide");
-      return this.view.hide();
+      this.view.hide();
+      return $('#loading').trigger('load', ['loaded']);
     };
 
     loadingCtrl.prototype.init = function() {
       var _this = this;
       return setTimeout(function() {
         return _this.deactivate();
-      }, 5000);
+      }, 2000);
     };
 
     return loadingCtrl;

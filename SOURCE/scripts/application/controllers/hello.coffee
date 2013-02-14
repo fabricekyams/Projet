@@ -6,10 +6,12 @@ define ["jquery"], ($) ->
       @view = view
 
     activate:->
-      @view.show
+      @view.show()
+      
 
     deactivate:->
-     @view.hide
+      @view.hide()
+    
 
     init:->
     # dans 5 seconde j'envoi une evenement

@@ -7,13 +7,21 @@ define [
 
   class Application
     init: () ->
-      @loadingCtrl = new loadingCtrl (new loadingView("#loading"))
       @helloCtrl = new helloCtrl(new helloView("#hello"))
-      @loadingCtrl.init()
-
-      $("#loading").bind '', ()->
-          console.log("I hide")
+      @loadingCtrl = new loadingCtrl (new loadingView("#loading"))
       
+      @helloCtrl.deactivate()
+      @loadingCtrl.init()
+      #@helloCtrl.activate()
+      
+
+      $("#loading").bind 'load', (e)=>
+          @helloCtrl.activate()
+
+      
+    #dispatch: (e)->
+    # switch e
+    #  when 'loaded'
 
 
 
